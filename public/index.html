@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Randy</title>
+  <script src="lib/codemirror.js"></script>
+  <script src="lib/md5.min.js"></script>
+  <script src="basic.js"></script>
+  <script src="cookie.js"></script>
+  <link rel="stylesheet" href="lib/codemirror.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+  <script src="mode/javascript/javascript.js"></script>
+  <script src="https://codemirror.net/addon/dialog/dialog.js"></script>
+
+
+</head>
+
+<body>
+
+  <h1>Mundoso!</h1>
+
+<br>
+<div id="gigante"></div>
+<br>
+
+  <div id="messages"></div>
+
+<br>
+<div id="contador"></div>
+<br>
+
+
+
+  <form onsubmit="return addMessage(this)">
+    <input type="text" id="username" placeholder="Tu nombre" >
+    <input type="text" id="texto" placeholder="Cuentame..." >
+    <input type="submit" value="Enviar!!">
+  </form>
+
+
+  <textarea id="code">
+    goal = 100;
+    TirarDado(6);
+    SumarDadoAJugador(dado,turnoDe);
+    ComprobarSiHaGanado(turnoDe,goal);
+    SiguienteTurno();
+    </textarea>
+  <button onclick="run()"> run </button>
+
+
+
+<script type="text/javascript" src="randy.js"></script>
+
+
+</body>
+</html>

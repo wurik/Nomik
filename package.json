@@ -1,0 +1,24 @@
+{
+  "name": "randy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/wurik/randy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/wurik/randy#readme",
+  "keywords": [],
+  "description": ""
+}

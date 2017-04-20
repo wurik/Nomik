@@ -13,9 +13,14 @@ function run() {
   }
 }
 
-document.body.addEventListener('keyup', function (e) {
-    socket.emit('nuevo-codigo', myCodeMirror.getValue());
-});
+// document.body.addEventListener('keyup', function (e) {
+//     socket.emit('nuevo-codigo', myCodeMirror.getValue());
+// });
+
+
+function enviar(){
+  socket.emit('nuevo-codigo', myCodeMirror.getValue());
+}
 
 
 socket.on('actualizandoCodigo', function(data) {

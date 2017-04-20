@@ -44,13 +44,15 @@ function renderGigante (data) {
 }
 
 
-
 function addMessage(e) {
+  var texto = document.getElementById('texto');
+  if (texto.value != null && texto.value != ""){ //Por si acaso alguien se pone a enviar valores en blanco o demasiado rápido
   var payload = {
-    author: document.getElementById('username').value,
+    author: socketCookie[0].userName, //Tomamos el nombre de usuario de la cookie
     text: document.getElementById('texto').value
   };
-
   socket.emit('new-message', payload);
-  return false;
+  }
+texto.value = ''; //Reseteamos formulario
+return false;
 }

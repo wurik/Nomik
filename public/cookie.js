@@ -27,21 +27,24 @@ function deleteCookie () {
 var sendAuthCookie = function(){
   var secretNum = Random(10000000000000000000000000000000000000, 1000000000000000000000000000000000000);
   var secretMD5 = md5(secretNum);
-  makeCookie("MD5", secretMD5);
+  makeCookie("secretMD5", secretMD5);
+  var publicNum = Random(10000000000000000000000000000000000000, 1000000000000000000000000000000000000);
+  var publicMD5 = md5(publicNum);
+  makeCookie("publicMD5", publicMD5);
   var userName = prompt("And you are... ?");
   makeCookie("userName", userName);
 };
 
 
-if (readCookie("MD5") === null){
+if (readCookie("publicMD5") === null){
   sendAuthCookie();
 }
 
 
 
 var socketCookie = [
-  {MD5:"123w4567d89", userName:"PepeFlores"},
-  {MD5:readCookie("MD5"), userName:readCookie("userName")}
+  // {MD5:"123w4567d89", userName:"PepeFlores"},
+  {secretMD5:readCookie("secretMD5"),publicMD5:readCookie("publicMD5"), userName:readCookie("userName")}
 ];
 
-socket.emit('TomaCookie', TomaCookie);
+socket.emit('TomaCookie', socketCookie);

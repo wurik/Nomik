@@ -60,8 +60,9 @@ io.on('connection', function(socket) {
     });
 
   socket.on('TomaCookie', function(data) { // RECIBIMOS COOKIE
-      var holalola = data;
-      console.log(holalola);
+      Cookie = data;
+      console.log(Cookie);
+      io.sockets.emit('actualizandoCodigo', actualizandoCodigo);
     });
 
   socket.emit('messages', formatoDeMensajes);  // ENVIAMOS EL CONTENIDO DEL FORMATO DE MENSAJES

@@ -6,12 +6,12 @@
   <script src="lib/codemirror.js"></script>
   <script src="lib/md5.min.js"></script>
   <script src="basic.js"></script>
-  <script src="cookie.js"></script>
   <link rel="stylesheet" href="lib/codemirror.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="main.js"></script>
   <script src="mode/javascript/javascript.js"></script>
   <script src="https://codemirror.net/addon/dialog/dialog.js"></script>
+  <script src="cookie.js"></script>
 
 
 </head>
@@ -33,7 +33,6 @@
 
 
   <form onsubmit="return addMessage(this)">
-    <input type="text" id="username" placeholder="Tu nombre" >
     <input type="text" id="texto" placeholder="Cuentame..." >
     <input type="submit" value="Enviar!!">
   </form>
@@ -47,6 +46,7 @@
     SiguienteTurno();
     </textarea>
   <button onclick="run()"> run </button>
+  <button onclick="enviar()"> Enviar </button>
 
 
 

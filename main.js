@@ -21,6 +21,7 @@ SiguienteTurno();
 
 var contadorNum = 60;
 var contadorGigante = 100000000000000;
+var alehop = ale();
 
 setInterval(function() {
   contadorNum--;
@@ -43,14 +44,22 @@ app.get('/hello', function(req, res) {
 
 io.on('connection', function(socket) {
   console.log('Aquí hay un pitufo');
+  console.log(socket.id);
 
   setInterval(function() {
-    socket.emit('dorGigante', contadorGigante);
-  },1000);
+    socket.emit('dorGigante', alehop);
+  },100);
 
   setInterval(function() {
-    socket.emit('contador', contadorNum);
-  },1000);
+    socket.emit('contador', contadorNum + " " + contadorGigante);
+  },10);
+
+  socket.on('Siguiente', function(data) { // RECIBIMOS Siguiente
+    if (data==true){
+      alehop = ale();
+    }
+    console.log('Nuevo valor aleatorio:' + alehop);
+  });
 
 
   socket.on('nuevo-codigo', function(data) { // RECIBIMOS UN new-message
@@ -80,3 +89,11 @@ io.on('connection', function(socket) {
 server.listen(8080, function() {
   console.log("Servidor corriendo en http://localhost:8080");
 });
+
+
+// Dados
+
+function ale() {
+  var ale = Math.random();
+  return ale;
+}

@@ -29,5 +29,10 @@ Cuando damos con un ganador, el juego se termina.
 
 
 
+En un periodo concreto (Ej 5 segundos) Cada usuario envia un resultado / numero al servidor.
+Si este es igual en todos los casos, se aprueba el resultado
+
+
+
 
 */

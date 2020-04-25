@@ -76,7 +76,7 @@ jugador[4] = {
 
 
 function TirarDado(caras){
-  dado = Math.floor(Math.random() * ((caras+1) - 1)) + 1;
+  dado = Math.floor(aleatorio * ((caras+1) - 1)) + 1;
   alert("Dado: " + dado);
 }
 
@@ -86,6 +86,7 @@ function SumarDadoAJugador(dado,turnoDe){
 }
 
 function SiguienteTurno(){
+    socket.emit('Siguiente', true);
     numJugadores = jugador.length - 1;
     if (turnoDe >= numJugadores){
       turnoDe = 0;

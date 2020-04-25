@@ -1,5 +1,8 @@
 var socket = io.connect('http://localhost:8080', { 'forceNew': true });
 
+var aleatorio = 0;
+
+
 socket.on('messages', function(data) {
   console.log(data);
   render(data);
@@ -39,6 +42,7 @@ function renderNum (data) {
 
 function renderGigante (data) {
   var numG = data;
+  aleatorio = numG;
 
   document.getElementById('gigante').innerHTML = numG;
 }
